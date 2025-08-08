@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>eCloth Try-On</title>
+</head>
+<body>
+  <h1>eCloth 虛擬試衣</h1>
+  <form method="post" enctype="multipart/form-data">
+    <label>上傳人物圖片：</label><br>
+    <input type="file" name="model_image" required><br><br>
+    <label>上傳衣服圖片（透明 PNG）：</label><br>
+    <input type="file" name="clothing_image" required><br><br>
+    <button type="submit">試穿</button>
+  </form>
+
+  {% if result_url %}
+    <h2>試穿結果：</h2>
+    <img src="{{ result_url }}" width="400">
+  {% endif %}
+</body>
+</html>
